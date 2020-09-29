@@ -3,7 +3,7 @@ from flask import jsonify, request
 from werkzeug.exceptions import HTTPException
 from torch import FloatTensor
 
-from evaluator import anomaly_evaluator
+from app.evaluator import anomaly_evaluator
 
 @app.route('/')
 def home():

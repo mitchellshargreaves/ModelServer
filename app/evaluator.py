@@ -1,6 +1,6 @@
 import torch
 from torchvision import transforms
-import models
+from app import models
 from math import log
 
 class Evaluator():
