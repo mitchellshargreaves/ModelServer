@@ -1,7 +1,7 @@
 import torch
 # from torchvision import transforms
 from math import log
-import models
+import torchmodels.models as models
 
 class Evaluator():
     def __init__(self, model, transforms=None, device="cpu", confidence=0.8):
@@ -22,10 +22,8 @@ class Evaluator():
             # Evaluate
             if isinstance(inputs, list):
                 return self._evaluate_list(inputs)
-            else:
-                return self._evaluate_one(inputs)
 
-        return out
+            return self._evaluate_one(inputs)
 
     def _evaluate_one(self, x):
         # Do transforms

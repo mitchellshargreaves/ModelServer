@@ -1,7 +1,7 @@
 from typing import Optional
 from fastapi import FastAPI
 from torch import FloatTensor
-from evaluator import evaluator
+from torchmodels.evaluator import evaluator
 
 
 app = FastAPI()
