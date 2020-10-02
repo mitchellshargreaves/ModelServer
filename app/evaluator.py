@@ -1,7 +1,7 @@
 import torch
-from torchvision import transforms
-from app import models
+# from torchvision import transforms
 from math import log
+import models
 
 class Evaluator():
     def __init__(self, model, transforms=None, device="cpu", confidence=0.8):
@@ -78,4 +78,4 @@ model = models.FCN()
 # ])
 
 # Define evaluator
-anomaly_evaluator = Evaluator(model)
+evaluator = Evaluator(model)
