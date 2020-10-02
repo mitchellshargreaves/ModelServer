@@ -3,22 +3,18 @@ from fastapi import FastAPI
 from torch import FloatTensor
 from torchmodels.evaluator import evaluator
 
-
+# Instatiate app
 app = FastAPI()
 
-
+# Root call
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"status": "ready"}
 
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
-
+# Prediction endpoint
 @app.get("/predict")
 def read_anomaly(input: str):
-    # Read file details from the request
+    # Parse input string to extract data
     input = input[1:-1].replace(',', '')
     input = input.split()
     input = [float(x) for x in input]
